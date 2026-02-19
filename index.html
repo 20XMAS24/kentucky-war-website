@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kentucky War - Military RolePlay Server</title>
+    <meta name="description" content="Kentucky War - Военный GTA 5 RolePlay сервер. Вступай в ряды, сражайся за свою фракцию!">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Kentucky War Logo" class="logo-image">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О проекте</a></li>
+                <li><a href="#factions">Фракции</a></li>
+                <li><a href="#servers">Сервера</a></li>
+                <li><a href="#donate">Поддержать</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <button class="btn btn-primary btn-nav" onclick="window.location.href='#start'">Вступить</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>KENTUCKY WAR</h1>
+            <p class="subtitle">MILITARY OPERATIONS</p>
+            <p class="hero-description">Стратегия, тактика, боевые действия</p>
+            
+            <!-- Online Players Counter -->
+            <div class="online-counter">
+                <div class="counter-box">
+                    <div class="counter-label">Бойцов онлайн</div>
+                    <div class="counter-number" id="onlinePlayers">847</div>
+                </div>
+                <div class="counter-box">
+                    <div class="counter-label">Активных операций</div>
+                    <div class="counter-number" id="activeOps">12</div>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <button class="btn btn-primary btn-large" onclick="document.getElementById('start').scrollIntoView({ behavior: 'smooth' })">
+                    Начать службу
+                </button>
+                <button class="btn btn-secondary btn-large" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
+                    Узнать больше
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Combat Zone</span>
+                <h2>Добро пожаловать в <span class="highlight">Kentucky War</span></h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead-text">
+                        <strong>Kentucky War</strong> — это уникальный военный RolePlay сервер на базе GTA 5. 
+                        Здесь вы станете частью военной операции, где каждое решение имеет значение.
+                    </p>
+                    <p>
+                        Выбирай свою <span class="text-highlight">фракцию</span>, проходи <span class="text-highlight">обучение</span>, 
+                        участвуй в <span class="text-highlight">тактических операциях</span> и <span class="text-highlight">масштабных боях</span>. 
+                        Стань частью военной машины, где дисциплина, стратегия и командная работа — залог победы!
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Военных фракций</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Видов техники</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Типов оружия</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <span class="placeholder-text">COMBAT SCREENSHOT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Factions Section -->
+    <section id="factions" class="factions-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Choose Your Side</span>
+                <h2>Военные <span class="highlight">Фракции</span></h2>
+                <p class="section-subtitle">Выбери свою сторону конфликта и докажи свою преданность</p>
+            </div>
+            
+            <div class="factions-grid">
+                <div class="faction-card">
+                    <div class="faction-banner blue">
+                        <h3>🛡️ Синие</h3>
+                    </div>
+                    <div class="faction-content">
+                        <h4>Объединенные Силы</h4>
+                        <p>Защитники порядка и стабильности. Элитные войска с передовым вооружением.</p>
+                        <ul class="faction-features">
+                            <li>✓ Современная техника</li>
+                            <li>✓ Тактическая поддержка</li>
+                            <li>✓ Воздушное превосходство</li>
+                        </ul>
+                        <button class="btn btn-faction" onclick="selectFaction('blue')">Вступить</button>
+                    </div>
+                </div>
+                
+                <div class="faction-card">
+                    <div class="faction-banner red">
+                        <h3>⚔️ Красные</h3>
+                    </div>
+                    <div class="faction-content">
+                        <h4>Освободительная Армия</h4>
+                        <p>Борцы за свободу и независимость. Партизанская тактика и внезапные атаки.</p>
+                        <ul class="faction-features">
+                            <li>✓ Партизанская тактика</li>
+                            <li>✓ Диверсионные операции</li>
+                            <li>✓ Численное преимущество</li>
+                        </ul>
+                        <button class="btn btn-faction" onclick="selectFaction('red')">Вступить</button>
+                    </div>
+                </div>
+                
+                <div class="faction-card">
+                    <div class="faction-banner green">
+                        <h3>🎯 Зеленые</h3>
+                    </div>
+                    <div class="faction-content">
+                        <h4>Специальные Операции</h4>
+                        <p>Элитные спецназовцы. Секретные миссии и операции прикрытия.</p>
+                        <ul class="faction-features">
+                            <li>✓ Скрытность операций</li>
+                            <li>✓ Точечные удары</li>
+                            <li>✓ Элитное снаряжение</li>
+                        </ul>
+                        <button class="btn btn-faction" onclick="selectFaction('green')">Вступить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servers Section -->
+    <section id="servers" class="servers-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Battle Servers</span>
+                <h2>Боевые <span class="highlight">Сервера</span></h2>
+                <p class="section-subtitle">Присоединяйся к активным боевым операциям!</p>
+            </div>
+            
+            <div class="servers-grid">
+                <div class="server-card" onclick="copyIP('war1.kentucky.com')">
+                    <div class="server-status online"></div>
+                    <div class="server-info">
+                        <h3 class="server-name">Kentucky War - Main Battlefield</h3>
+                        <p class="server-ip">war1.kentucky.com</p>
+                        <div class="server-stats">
+                            <span class="stat">347 / 500 бойцов</span>
+                            <span class="stat">⚔️ 8 активных боёв</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-small btn-copy">Скопировать IP</button>
+                </div>
+                
+                <div class="server-card" onclick="copyIP('war2.kentucky.com')">
+                    <div class="server-status online"></div>
+                    <div class="server-info">
+                        <h3 class="server-name">Kentucky War - Special Operations</h3>
+                        <p class="server-ip">war2.kentucky.com</p>
+                        <div class="server-stats">
+                            <span class="stat">256 / 500 бойцов</span>
+                            <span class="stat">🎯 5 тактических миссий</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-small btn-copy">Скопировать IP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Combat Features</span>
+                <h2>Возможности <span class="highlight">проекта</span></h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚁</div>
+                    <h3>Военная техника</h3>
+                    <p>Танки, БТР, вертолеты, истребители и другая боевая техника</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎖️</div>
+                    <h3>Система рангов</h3>
+                    <p>Продвигайся по службе от рядового до генерала</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Тактические операции</h3>
+                    <p>Захват территорий, конвойное сопровождение, штурмы баз</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Военная экономика</h3>
+                    <p>Зарабатывай на боевых заданиях и развивай фракцию</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Снайперские дуэли</h3>
+                    <p>Специальный режим для профессионалов дальнего боя</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Турниры и ивенты</h3>
+                    <p>Регулярные соревнования между фракциями</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="donation-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Support Project</span>
+                <h2>Поддержи <span class="highlight">проект</span></h2>
+                <p class="section-subtitle">Получи военные привилегии и помоги развитию сервера!</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-badge">Рядовой</div>
+                    <h3 class="plan-name">Recruit</h3>
+                    <div class="plan-price">
+                        <span class="price-amount">199</span>
+                        <span class="price-currency">₽</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✅ Стартовый набор оружия</li>
+                        <li>✅ Военная форма</li>
+                        <li>✅ Приоритет в очереди</li>
+                        <li>✅ 50,000 игровой валюты</li>
+                    </ul>
+                    <button class="btn btn-primary btn-donate">Купить</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="plan-badge popular">Популярное</div>
+                    <h3 className="plan-name">Sergeant</h3>
+                    <div class="plan-price">
+                        <span class="price-amount">499</span>
+                        <span class="price-currency">₽</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✨ Элитное оружие</li>
+                        <li>✨ Эксклюзивная форма</li>
+                        <li>✨ Личный транспорт</li>
+                        <li>✨ VIP-доступ к базам</li>
+                        <li>✨ 150,000 игровой валюты</li>
+                    </ul>
+                    <button class="btn btn-primary btn-donate">Купить</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="plan-badge">Элита</div>
+                    <h3 class="plan-name">Commander</h3>
+                    <div class="plan-price">
+                        <span class="price-amount">999</span>
+                        <span class="price-currency">₽</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>👑 Вся военная техника</li>
+                        <li>👑 Командирская форма</li>
+                        <li>👑 Вертолет или танк</li>
+                        <li>👑 Приватная база</li>
+                        <li>👑 350,000 игровой валюты</li>
+                        <li>👑 Бета-доступ к обновлениям</li>
+                    </ul>
+                    <button class="btn btn-primary btn-donate">Купить</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="start" class="getting-started">
+        <div class="container">
+            <div class="section-header">
+                <h2>Как <span class="highlight">начать службу</span>?</h2>
+                <p class="section-subtitle">Три шага до поля боя</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Установи GTA V</h3>
+                        <p>Лицензионная версия игры обязательна для подключения</p>
+                        <div class="platform-links">
+                            <a href="https://store.steampowered.com/app/271590/" class="platform-btn" target="_blank">Steam</a>
+                            <a href="https://store.epicgames.com/" class="platform-btn" target="_blank">Epic Games</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Скачай Kentucky War Launcher</h3>
+                        <p>Специальный лаунчер для подключения к военным серверам</p>
+                        <button class="btn btn-primary btn-download">
+                            <span class="download-icon">↓</span> Скачать лаунчер
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Выбери фракцию и вступай в бой</h3>
+                        <p>Пройди обучение и присоединяйся к операциям</p>
+                        <button class="btn btn-secondary" onclick="document.getElementById('factions').scrollIntoView({ behavior: 'smooth' })">
+                            Выбрать фракцию
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Часто задаваемые <span class="highlight">вопросы</span></h2>
+            </div>
+            
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Что такое Kentucky War?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Это военный RolePlay сервер на базе GTA V, где игроки участвуют в масштабных боевых операциях, выбирая одну из военных фракций.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Какие фракции доступны?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>На сервере доступны три основные фракции: Синие (Объединенные Силы), Красные (Освободительная Армия) и Зеленые (Спецназ). Каждая имеет уникальный стиль игры.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Как получить технику?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Техника выдается по рангу или приобретается за внутриигровую валюту. Донатеры получают доступ к эксклюзивным моделям.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Есть ли обучение для новичков?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, каждый новый боец проходит базовое обучение, где изучает механики боя, управление техникой и тактические основы.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Можно ли менять фракцию?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Смена фракции возможна, но требует прохождения периода ожидания и потери части прогресса.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kentucky War</h4>
+                    <p>Военный GTA 5 RolePlay сервер.<br>Вступай в ряды, сражайся за победу!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">О проекте</a></li>
+                        <li><a href="#factions">Фракции</a></li>
+                        <li><a href="#servers">Сервера</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Сообщество</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Discord</a>
+                        <a href="#" class="social-link">VK</a>
+                        <a href="#" class="social-link">Telegram</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kentucky War Project. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
